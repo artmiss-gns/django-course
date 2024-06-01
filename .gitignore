@@ -1,0 +1,21 @@
+# Python virtual environment
+venv/
+*.egg-info/
+
+# OS files
+__pycache__/
+thumbs.db
+Desktop.ini
+
+# Log files
+*.log
+
+# Node.js files (if using npm or yarn)
+node_modules/
+
+# Coverage files
+*.coverage
+.coverage
+
+# Django migrations
+*/migrations/*.pyc
