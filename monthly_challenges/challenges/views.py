@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, HttpResponseRedirect
 
 # Create your views here.
 
@@ -27,8 +27,14 @@ def month_challenge(request, month:str):
         return HttpResponseNotFound(f"Month not found: {month.title()}")
     
 def numeric_month_challenge(request, month:int):
-    month = list(challenges.keys())[month-1]
     try :
-        return HttpResponse(challenges[month.title()])
-    except KeyError:
-        return HttpResponseNotFound(f"Month not found: {month.title()}")
+        month = list(challenges.keys())[month-1]
+    except IndexError:
+        return HttpResponseNotFound(f"Not valid input: {month}")
+    # try :
+    #     return HttpResponse(challenges[month.title()])
+    # except KeyError:
+    #     return HttpResponseNotFound(f"Month not found: {month.title()}")
+    
+    # instead of rewriting the code, we can redirect this address
+    return HttpResponseRedirect(f'/challenges/{month}')
