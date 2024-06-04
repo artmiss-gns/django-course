@@ -18,14 +18,23 @@ challenges = {
     'December': '30 seconds of jogging in place'
 }
 
-def challenges_index(request):
-    return HttpResponse("HELLO WORLD")
+def index(request):
+    return render(request, 'challenges/index.html')
 
 def monthly_challenges(request, month):
     month = month.title() # to match it to our data
     try: 
         task = challenges[month]
-        return HttpResponse(f"{month}: {task}")
+        # return HttpResponse(f"{month}: {task}")
+        return render(
+            request,
+            'challenges/challenges.html',
+            context={
+                'month': month,
+                'task': task,
+            }
+        )
+        
     except KeyError:
         raise Http404(f"{month} is not a valid month!")
     
