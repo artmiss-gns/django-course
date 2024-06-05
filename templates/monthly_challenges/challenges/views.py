@@ -15,11 +15,16 @@ challenges = {
     'September': '30 seconds of wall sit',
     'October': '10 mountain climbers',
     'November': '20 leg raises',
-    'December': '30 seconds of jogging in place'
+    # 'December': '30 seconds of jogging in place'
+    'December': None,
 }
 
 def index(request):
-    return render(request, 'challenges/index.html')
+    return render(request, 'challenges/index.html', 
+        context={
+            'months': list(challenges.keys())
+        }   
+    )
 
 def monthly_challenges(request, month):
     month = month.title() # to match it to our data

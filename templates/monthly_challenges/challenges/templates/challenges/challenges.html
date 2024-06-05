@@ -8,7 +8,11 @@
         {{ month | upper}}
     </h1>
     <main>
-        {{ task }}
+        {% if task != None %}
+            {{ task }}
+        {% else %}
+            <p>No task for this month!</p>
+        {% endif %}
     </main>
 </body>
 </html>
