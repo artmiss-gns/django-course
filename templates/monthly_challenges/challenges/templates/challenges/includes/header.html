@@ -1,4 +1,7 @@
+{% load static %}
+
 <header>
+  <link rel="stylesheet" href="{% static "styles.css" %}">
   <nav>
     <ul>
       <li><a href="{% url "index_page" %}">All challenges</a></li>
