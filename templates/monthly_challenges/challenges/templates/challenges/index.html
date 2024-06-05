@@ -1,18 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Challenges</title>
-</head>
-<body>
-	<header>
-		<h1>Monthly Challenges</h1>
-	</header>
-	<main>
+{% extends "base.html" %}
+
+	{% block page_title%}
+		All challenges
+	{% endblock %}
+
+	{% block content %}
 		<ul>
 		{% for month in months %}
 				<li><a href="{% url "month_challenges" month%}">{{ month }}</a></li>
 		{% endfor %}
 		</ul>
-	</main>
-</body>
-</html>
+	{% endblock  %}

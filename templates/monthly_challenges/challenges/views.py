@@ -41,11 +41,13 @@ def monthly_challenges(request, month):
         )
         
     except KeyError:
-        raise Http404(f"{month} is not a valid month!")
+        # raise Http404(f"{month} is not a valid month!")
+        raise Http404()
     
 def numeric_monthly_challenges(request, month):
     if month > 12 or month < 1 :
-        raise Http404(f"{month} is not a valid numeric month!")
+        # raise Http404(f"{month} is not a valid numeric month!")
+        raise Http404()
     
     month = list(challenges.keys())[month-1]
     redirected_path = reverse('month_challenges', args=[month])

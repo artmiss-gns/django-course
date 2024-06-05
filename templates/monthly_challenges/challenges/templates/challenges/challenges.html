@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Monthly </title>
-</head>
-<body>
+
+{% block page_title %}{% endblock page_title %}
+
+{% include "challenges/includes/header.html" %}
+
+{% block content %}
     <h1>
         {{ month | upper}}
     </h1>
@@ -13,6 +14,5 @@
         {% else %}
             <p>No task for this month!</p>
         {% endif %}
-    </main>
-</body>
-</html>
+{% endblock content %}
+ 
