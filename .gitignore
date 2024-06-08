@@ -20,3 +20,6 @@ node_modules/
 
 # Django migrations
 */migrations/*.pyc
+
+# other
+.DS_Store

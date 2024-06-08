@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title%}
+    Single post
+{% endblock %}
+
+{% block additional_css %}{% endblock additional_css %}
+
+{% block content %}
+    <div class="post-page">
+        <h1>{{ post.title }}</h1>
+        <p class="post-meta">Posted on {{ post.date }}</p>
+        <img src="{% static "blog/images/"|add:post.image %}" alt="{{ post.title }}" class="post-image">
+        <div class="post-content">
+        {{ post.content|safe }}
+        </div>
+    </div>
+{% endblock  %}
