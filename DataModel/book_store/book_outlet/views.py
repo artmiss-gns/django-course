@@ -8,8 +8,8 @@ def index(request):
         request, 'book_outlet/index.html', {'books': books}
     )
 
-def book(request, book_id):
-    book = Book.objects.get(id=book_id)
+def book(request, slug):
+    book = Book.objects.get(slug=slug)
     return render(
         request, 'book_outlet/book.html', {'book': book}
     )
