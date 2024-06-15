@@ -1,11 +1,12 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .sample_database import data
+from .models import Post
 # Create your views here.
 
 def main_page(request):
-    chosen_posts = sorted(data, key=lambda post: post['date'], reverse=True)[0:3]
+    # chosen_posts = sorted(data, key=lambda post: post['date'], reverse=True)[0:3]
+    chosen_posts = Post.objects.order_by('-date')[:3]
     context = {
         'data': chosen_posts,
     }
@@ -14,6 +15,7 @@ def main_page(request):
     
 def all_blogs(request):
     '''all the posts'''
+    data = Post.objects.all()
     context = {
         'posts': data,
     }
@@ -23,7 +25,7 @@ def all_blogs(request):
 
 
 def single_blog(request, slug:str):
-    post = [p for p in data if p['slug']==slug][0]
+    post = Post.objects.get(slug=slug)
     context = {
         'post':post,
     }
