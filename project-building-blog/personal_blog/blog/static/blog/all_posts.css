@@ -1,44 +1,72 @@
 body {
-    background-color: #e7e7e7;
-  }
-  
-  #main-navigation {
-    background-color: #390281;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  }
-  
-  #all-posts {
-    margin: 7rem auto;
-    width: 90%;
-    max-width: 60rem;
-  }
-  
-  #all-posts h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: #2e2e2e;
-    margin: 3rem 0;
-  }
-  
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
-    gap: 1.5rem;
-  }
-  
-  .post img {
-    width: 7rem;
-    height: 7rem;
-  }
-  
-  .post a {
-    height: 22rem;
-    transform-origin: center;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-    border-radius: 12px;
-    background-color: white;
-  }
-  
+  background-color: #e7e7e7;
+}
+
+.nav-bar {
+  background-color: #390281;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.all-posts {
+  margin: 7rem auto;
+  width: 90%;
+  max-width: 60rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.all-posts > div {
+  margin: 2rem;
+  flex-basis: 30%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.all-posts img {
+  width: 100%;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 5px 5px 0 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+.all-posts img:hover {
+  transform: scale(1.05);
+}
+
+.all-posts h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2e2e2e;
+  margin: 1rem 0;
+}
+
+.all-posts p {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 2rem;
+}
+
+.all-posts a {
+  display: inline-block;
+  background-color: #337ab7;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.all-posts a:hover {
+  background-color: #23527c;
+}
+
+.all-posts a:active {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}

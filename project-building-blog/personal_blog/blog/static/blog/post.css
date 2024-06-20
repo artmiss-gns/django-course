@@ -1,45 +1,92 @@
-/* Post Styles */
-
 .post {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
+  padding: 2rem;
+  border-bottom: 1px solid #eee;
 }
 
-.post a {
+.post-image {
+  width: 15rem;
+  height: 15rem;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.post-image:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.post-page a {
   text-decoration: none;
   color: black;
   transition: all 0.2s ease;
-  padding: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  background-color: #337ab7;
+  color: #fff;
 }
 
-.post a:hover,
-.post a:active {
+.post-page a:hover,
+.post-page a:active {
   transform: scale(1.1);
-  background-color: #390281;
-  color: white;
+  background-color: #23527c;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-.post img {
-  width: 5rem;
-  height: 5rem;
-  object-fit: cover;
-  border-radius: 50%;
-}
-
-.post h3 {
+.post-page h3 {
   margin: 0.25rem 0;
+  font-size: 1.25rem;
 }
 
-.post time {
+.post-page time {
   color: #666666;
   margin: 0.25rem;
   font-style: italic;
   font-size: 0.85rem;
 }
 
-.post:hover time,
-.post:active time {
-  color: white;
+.post-page:hover time,
+.post-page:active time {
+  color: #fff;
+}
+
+.post-page:hover,
+.post-page:active {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+
+#tag {
+  margin: 20px 0;
+}
+
+#tag h2 {
+  margin-top: 0;
+}
+
+#tag ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#tag li {
+  display: inline-block;
+  margin: 5px 10px;
+}
+
+#tag li::before {
+  content: '#';
+  font-size: 1.2rem;
+  color: #337ab7;
+}
+
+#tag li:hover {
+  color: #23527c;
+  text-decoration: underline;
 }

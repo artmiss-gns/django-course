@@ -20,9 +20,9 @@ class Post(models.Model):
     excerpt = models.CharField(max_length=64)
     image_name = models.CharField(max_length=16 ,null=True) # ! This can be implemented better later
     date = models.DateField(null=False)
-    slug = models.SlugField()
+    slug = models.SlugField(unique=True, db_index=True)
     content = models.TextField(null=True)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='posts')
     tag = models.ManyToManyField(Tag, blank=True)
     
     

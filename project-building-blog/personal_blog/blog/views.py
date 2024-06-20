@@ -28,6 +28,7 @@ def single_blog(request, slug:str):
     post = Post.objects.get(slug=slug)
     context = {
         'post':post,
+        'tags': post.tag.all(),
     }
     return render(
         request, 'blog/single_blog.html', context=context,

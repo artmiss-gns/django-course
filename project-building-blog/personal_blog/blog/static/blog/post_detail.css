@@ -1,64 +1,120 @@
 /* Post Detail Styles */
 
 body {
-  background-color: #e7e7e7;
+  background-color: #f9f9f9;
 }
 
-#main-navigation {
+.nav-bar {
   background-color: #390281;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
 
-#summary {
-  margin: 8rem auto 3rem auto;
-  padding: 2rem;
-  width: 90%;
-  max-width: 90rem;
-  border-radius: 16px;
-  background-color: #5706c0;
-  position: relative;
+.post-page {
+  margin: 40px auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
-  height: 22rem;
 }
 
-#summary h2 {
-  color: white;
-  font-size: 4.5rem;
+.post-page h1 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-#summary article {
-  position: absolute;
-  top: 2rem;
-  right: 3rem;
-  padding: 1rem 2rem;
-  border-radius: 12px;
-  text-align: right;
-  color: white;
+.post-page h3 {
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #666;
 }
 
-#summary article img {
-  width: 12rem;
-  height: 12rem;
-  border-radius: 12px;
-  transform: rotateZ(5deg);
-  border: 5px solid white;
-  margin-bottom: 1rem;
+.post-meta {
+  font-size: 16px;
+  color: #999;
+  margin-bottom: 20px;
 }
 
-#summary address {
+.post-content {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #444;
+}
+
+.post-image {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+  margin-bottom: 20px;
+}
+
+.post-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px 10px 0 0;
+}
+
+.post-text {
+  padding: 20px;
+}
+
+.post-text h1, .post-text h3 {
+  margin-top: 0;
+}
+
+.post-text p {
+  margin-bottom: 20px;
+}
+
+.post-page article {
+  padding: 20px;
+}
+
+.post-page address {
   font-weight: bold;
 }
 
-#summary time {
+.post-page time {
   font-weight: bold;
 }
 
-main {
-  width: 90%;
-  max-width: 90rem;
-  margin: 3rem auto;
-  background-color: white;
-  padding: 1rem;
-  border-radius: 12px;
+.main {
+  width: 80%;
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
 }
+
+.post-page a {
+  color: #337ab7;
+  text-decoration: none;
+}
+
+.post-page a:hover {
+  color: #23527c;
+}
+
+
+.post-image-container {
+  margin: 20px auto;
+  width: 100%;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.post-image {
+  width: 100%;
+  height: 600px; /* adjust the height to your liking */
+  object-fit: cover;
+  border-radius: 10px;
+}
+
