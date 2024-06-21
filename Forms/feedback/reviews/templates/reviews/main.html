@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Reviews</title>
+    </head>
+    <body>
+        <h1>Reviews</h1>
+        <form action="/", method='POST'>
+            {% csrf_token %}
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name"><br><br>
+            <label for="review">Review:</label>
+            <textarea id="review" name="review"></textarea><br><br>
+            <button>Submit Review</button>
+        </form>
+    </body>
+</html>
