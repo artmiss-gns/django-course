@@ -7,6 +7,6 @@ All Reviews
 
 {% block content %}
     {% for review in  reviews%}
-        <p>{{ review.name }}: {{ review.rating }} --> {{ review.review }}</p>
+        <p>{{review.pk}}-{{ review.name }}: {{ review.rating }} --> {{ review.review }}</p>
     {% endfor %}
 {% endblock content %}
