@@ -4,23 +4,19 @@ from django.shortcuts import render
 from django.http import HttpResponse, HttpResponseRedirect
 from django.views import View
 from django.views.generic.base import TemplateView
-from django.views.generic import ListView, DetailView, FormView
+from django.views.generic import ListView, DetailView, FormView, CreateView
 
 from .forms import ReviewForm
 from .models import Review
 
 
         
-class review(FormView):
+class review(CreateView):
+    model=Review
     form_class=ReviewForm
-    template_name='reviews/main.html'
-    success_url='thank_you'
-    
-    def form_valid(self, form):
-        form.save()
-        return super().form_valid(form)
+    template_name = "reviews/main.html"
+    success_url = "thank_you"
             
-
 class ThankYou(TemplateView):
     template_name='reviews/thank_you.html'
     
