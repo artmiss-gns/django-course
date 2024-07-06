@@ -1,0 +1,36 @@
+{% comment %} <!-- profiles/templates/profiles/success_upload.html -->
+
+<h1>File Upload Successful!</h1>
+
+<p>Your profile picture has been uploaded successfully!</p>
+
+<!-- Display the uploaded image -->
+<img src="{{ MEDIA_URL }}{{ profile.profile_picture }}" alt="Profile Picture">
+
+<p>View your <a href="{% url 'profile_list' %}">profile</a> to see the changes.</p> {% endcomment %}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>File Upload Success</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f0f0f0;
+		}
+		.success-msg {
+			color: #0f0;
+			font-size: 24px;
+			font-weight: bold;
+			margin-bottom: 20px;
+		}
+	</style>
+</head>
+<body>
+	<div class="success-msg">
+		<h1>File Upload Successful!</h1>
+		<p>Your file has been uploaded successfully.</p>
+	</div>
+</body>
+</html>
