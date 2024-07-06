@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views import View
 from django.views.generic.edit import CreateView
-from django.views.generic import TemplateView
+from django.views.generic import TemplateView, ListView
 from django.http import HttpResponseRedirect
 from django.urls import reverse
 
@@ -45,3 +45,10 @@ class CreateProfileView(CreateView):
     
 class SuccessView(TemplateView):
     template_name = 'profiles/success_upload.html'
+    
+
+
+class AllProfiles(ListView):
+	template_name = "profiles/all_profiles.html"
+	model = UserImage
+	context_object_name = 'images'
