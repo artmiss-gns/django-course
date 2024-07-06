@@ -11,7 +11,8 @@
 <body>
   <form enctype="multipart/form-data" method="post">
     {% csrf_token %}
-    <input type="file" name="profile_picture"/>
+    {{ form }}
+    {% comment %} <input type="file" name="profile_picture"/> {% endcomment %}
     <button>Upload!</button>
   </form>
 </body>
