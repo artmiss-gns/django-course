@@ -1,0 +1,29 @@
+{% extends "reviews/base.html" %}
+{% load static %}
+
+{% block title %}
+Reviews
+{% endblock title %}
+
+{% block content %}
+<h1>Reviews</h1>
+<form action="/", method='POST'>
+    {% csrf_token %}
+    <div class="form-control {% if form.name.errors %}errors{% endif %}">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+        <br><br>
+        {{ form.last_name.label_tag }}
+        {{ form.last_name }}
+        <br><br>
+        {{ form.rating.label_tag }}
+        {{ form.rating }}
+        <br><br>
+        {{ form.review.label_tag }}
+        {{ form.review }}
+        <br><br>
+        <button type='submit'>Submit Review</button>
+    </div>
+</form>
+
+{% endblock content %}
