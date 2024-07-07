@@ -1,0 +1,21 @@
+<!-- success_submit.html -->
+
+<!-- Extend the base template if you have one -->
+{% extends 'base.html' %}
+
+<!-- Define the block for the content -->
+{% block content %}
+
+  {% if messages %}
+  <div class="messages">
+      {% for message in messages %}
+      <p {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+      {% endfor %}
+  </div>
+  {% endif %}
+
+  <!-- Link to view the post -->
+
+  <!-- Link to add another post -->
+
+{% endblock %}

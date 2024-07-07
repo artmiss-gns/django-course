@@ -1,0 +1,33 @@
+<!-- post.html -->
+
+<!-- Extend the base template if you have one -->
+{% extends 'base.html' %}
+
+<!-- Define the block for the content -->
+{% block content %}
+
+  <!-- Loop through the posts and display each one -->
+  {% for post in posts %}
+
+    <!-- Post content -->
+    <div class="post">
+      <img src="" alt="post-image">
+
+      <!-- Display the number of likes -->
+
+
+      <!-- Like button -->
+
+      <!-- Display the username of the poster -->
+
+      <hr>
+    </div>
+
+  {% empty %}
+    <p>No posts available.</p>
+  {% endfor %}
+
+<!-- If the user is authenticated, display a form to create a new post -->
+
+
+{% endblock %}
