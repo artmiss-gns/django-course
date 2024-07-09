@@ -1,3 +1,4 @@
+{% load static %}
 <!-- base.html -->
 
 <!-- HTML document structure -->
@@ -10,6 +11,9 @@
     <!-- Load CSS files -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <!-- Add any other CSS files or styles here -->
+    <link rel="stylesheet" href="{% static "base.css" %}">
+    {% block additional_css %}{% endblock additional_css %}
+
 </head>
 <body>
     <!-- Navigation bar -->
@@ -24,23 +28,23 @@
                 <li class="nav-item active">
                     <a class="nav-link" href="{% url 'post' %}">Home <span class="sr-only">(current)</span></a>
                 </li>
-                {% if user.is_authenticated %}
+                {% if 1 %}
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'post_list' %}">Posts</a>
+                    {% comment %} <a class="nav-link" href="{% url 'post_list' %}">Posts</a> {% endcomment %}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'post_create' %}">Create Post</a>
+                    <a class="nav-link" href="{% url 'add-post' %}">Create Post</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                    {% comment %} <a class="nav-link" href="{% url 'logout' %}">Logout</a> {% endcomment %}
                 </li>
                 {% else %}
-                <li class="nav-item">
-                    {% comment %} <a class="nav-link" href="{% url 'login' %}">Login</a> {% endcomment %}
-                </li>
-                <li class="nav-item">
-                    {% comment %} <a class="nav-link" href="{% url 'register' %}">Register</a> {% endcomment %}
-                </li>
+                    <li class="nav-item">
+                        {% comment %} <a class="nav-link" href="{% url 'login' %}">Login</a> {% endcomment %}
+                    </li>
+                    <li class="nav-item">
+                        {% comment %} <a class="nav-link" href="{% url 'register' %}">Register</a> {% endcomment %}
+                    </li>
                 {% endif %}
             </ul>
         </div>

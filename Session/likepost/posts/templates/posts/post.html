@@ -1,9 +1,11 @@
+{% extends 'base.html' %}
+{% load static %}
 <!-- post.html -->
 
-<!-- Extend the base template if you have one -->
-{% extends 'base.html' %}
+{% block additional_css %}
+  <link rel="stylesheet" href='{% static "posts/styles/like.css" %}'>
+{% endblock additional_css %}
 
-<!-- Define the block for the content -->
 {% block content %}
 
   <!-- Loop through the posts and display each one -->
@@ -11,12 +13,27 @@
 
     <!-- Post content -->
     <div class="post">
-      <img src="" alt="post-image">
+      <!-- Post title -->
+      <h2>{{ post.title }}</h2>
 
-      <!-- Display the number of likes -->
+      <!-- Post image -->
+       {% if post.image %}
+        <img src="{{ post.image.url }}" alt="post-image">
+       {% endif %}
 
+      <!--- Post content -->
+      <p> {{ post.content }} </p>
 
       <!-- Like button -->
+      <form method="post" action="{% url 'like-post' %}">
+        {% csrf_token %}
+        {% if is_liked  %}
+          <p> {{is_liked}} </p>
+        {% endif %}
+        <button class="like-button" id="likeButton">Like</button>
+        
+      <script src="{% static "posts/scripts/like_button.js" %}"></script>
+      </form>
 
       <!-- Display the username of the poster -->
 

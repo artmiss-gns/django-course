@@ -1,0 +1,35 @@
+/* like.css */
+
+.like-button {
+  /* Base styles */
+  display: inline-block;
+    background-color: #e0e0e0;
+    border: none;
+    color: #000;
+    padding: 10px 20px;
+    font-size: 16px;
+  font-weight: bold;
+    cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.like-button:hover {
+  /* Hover effect */
+  background-color: #ccc;
+  color: #333;
+}
+
+.like-button.liked {
+  /* Liked button styles */
+  background-color: #ff69b4;
+  color: #fff;
+  box-shadow: 0 0 10px rgba(255, 105, 180, 0.5);
+}
+
+.like-button.liked:hover {
+  /* Liked button hover effect */
+  background-color: #ff7ab5;
+  color: #fff;
+}
