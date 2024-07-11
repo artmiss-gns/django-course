@@ -1,5 +1,4 @@
 /* index.css */
-
 /* Homepage Styles */
 
 /* Hero Section */
@@ -33,6 +32,16 @@
   width: 10rem;
 }
 
+.hero h1 {
+  font-size: 2rem;
+  margin: 0 0 0 2rem;
+  color: white;
+  width: 10rem;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  animation: text-glow 2s ease-in-out infinite;
+}
 .hero p {
   color: white;
   font-size: 1.5rem;
@@ -70,6 +79,10 @@
 .post-preview .post p {
   font-size: 16px;
   color: #666;
+  margin-bottom: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
 }
 
 /* Latest Posts Section */
@@ -97,6 +110,55 @@
 .latest-posts li {
   flex: 1;
 }
+
+.post {
+  /* Add some padding and margin to create space between posts */
+  padding: 20px;
+  margin: 20px 0;
+  /* Create a slight shadow to give it a card-like effect */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add some border radius to give it a rounded corner */
+  border-radius: 10px;
+  /* Use a flexible box layout to center the image and text */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+post .circle {
+  /* Style the image */
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.post h3 {
+  /* Style the title */
+  font-weight: bold;
+  margin-top: 0;
+}
+
+.post h3 a {
+  /* Style the title link */
+  text-decoration: none;
+  color: #337ab7; /* blue color */
+}
+
+.post h3 a:hover {
+  /* Add a hover effect to the title link */
+  color: #23527c; /* darker blue on hover */
+}
+
+.post p {
+  /* Style the excerpt text */
+  font-size: 16px;
+  margin-bottom: 20px;
+  color: #666; /* gray color */
+}
+
+
 
 /* About Section */
 .about {
