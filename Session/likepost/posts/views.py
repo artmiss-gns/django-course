@@ -47,7 +47,7 @@ class SuccessfulSubmit(TemplateView):
     
 class LikePost(View):
     def get(self, request):
-        pass
+        return HttpResponseRedirect(reverse('post'))
     def post(self, request):
         if request.session.get('liked') :
             request.session['liked'] = False
