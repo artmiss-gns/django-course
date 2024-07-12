@@ -1,0 +1,14 @@
+<!-- Add Comment Form -->
+<div class="add-comment">
+    <h3>Leave a comment</h3>
+    <form action="{% url 'add_comment' post.slug %}" method="post">
+      {% csrf_token %}
+      <label for="author">Your Name:</label>
+      <input type="text" id="author" name="author" required>
+  
+      <label for="text">Comment:</label>
+      <textarea id="text" name="comment_content"  required></textarea>
+  
+      <button type="submit">Add Comment</button>
+    </form>
+</div>  

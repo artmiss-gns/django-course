@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Author, Tag, Post
+from .models import Author, Tag, Post, Comment
 
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email_add')
@@ -20,7 +20,12 @@ class PostAdmin(admin.ModelAdmin):
     def tag_list(self, obj):
         return ', '.join([tag.name for tag in obj.tag.all()])
 
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('author', 'comment_content', 'post')
+    search_fields = ('author', 'post')
 
 admin.site.register(Author, AuthorAdmin)
 admin.site.register(Tag, TagAdmin)
 admin.site.register(Post, PostAdmin)
+admin.site.register(Comment, CommentAdmin)
+

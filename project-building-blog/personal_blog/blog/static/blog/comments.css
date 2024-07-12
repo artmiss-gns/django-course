@@ -1,0 +1,87 @@
+.comments {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.comments h2 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.comments ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.comments li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.comments li:last-child {
+  border-bottom: none;
+}
+
+.comment-author {
+  font-weight: bold;
+  color: #666;
+}
+
+.comment-content {
+  padding: 10px;
+}
+
+
+
+/* ##################################### */
+/* Add Comment */
+
+.add-comment {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-comment h3 {
+  margin-top: 0;
+  font-weight: bold;
+  color: #337ab7;
+}
+
+.add-comment label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #666;
+}
+
+.add-comment input[type="text"], .add-comment textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-comment textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+.add-comment button[type="submit"] {
+  background-color: #337ab7;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-comment button[type="submit"]:hover {
+  background-color: #23527c;
+}

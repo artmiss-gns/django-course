@@ -31,3 +31,12 @@ class Post(models.Model):
     
     def __str__(self) -> str:
         return f"Post: {self.title}"
+
+
+class Comment(models.Model):
+    author = models.CharField(max_length=32)
+    comment_content = models.TextField(null=False)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
+    
+    def __str__(self) -> str:
+        return f"Comment(): {self.author}"

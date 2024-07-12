@@ -1,0 +1,16 @@
+<!-- Comment Section -->
+<div class="comments">
+  <h2>Comments</h2>
+  {% if post.comments.all %}
+  <ul>
+    {% for comment in post.comments.all %}
+    <li>
+      <div class="comment-author">{{ comment.author }}</div>
+      <div class="comment-content">{{ comment.comment_content }}</div>
+    </li>
+    {% empty %}
+      <p>No comments yet.</p>
+    {% endfor %}
+  </ul>
+  {% endif %}
+</div>

@@ -1,7 +1,10 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Post
+from django.views import View
+
+from .models import Post, Comment
+from .forms import AddCommentForm
 # Create your views here.
 
 def main_page(request):
@@ -26,6 +29,7 @@ def all_blogs(request):
 
 def single_blog(request, slug:str):
     post = Post.objects.get(slug=slug)
+    
     context = {
         'post':post,
         'tags': post.tag.all(),
@@ -33,3 +37,24 @@ def single_blog(request, slug:str):
     return render(
         request, 'blog/single_blog.html', context=context,
     )
+    
+    
+class AddCommentView(View):
+    def get(self, request, slug):
+        # Not allowed 
+        return HttpResponse("Not Allowed", status=405)
+    
+    def post(self, request, slug):
+        form = AddCommentForm(request.POST)
+        if form.is_valid():
+            # saving the model
+            print('#'*10)
+            print(slug)
+            print('#'*10)
+            comment = Comment(author=request.POST['author'], comment_content=request.POST['comment_content'], post=Post.objects.get(slug=slug))
+            comment.save()
+            # return 200 OK 
+            return HttpResponse("Form Submitted!", status=200)
+            
+        else :
+            return HttpResponse("Invalid Form", status=400)
