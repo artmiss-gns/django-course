@@ -1,0 +1,27 @@
+<!-- read_later.html -->
+{% extends "base.html" %}
+{% load static %}
+
+{% block additional_css %}
+    <link rel="stylesheet" href="{% static "blog/post_detail.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/read_later.css" %}" />
+{% endblock additional_css %}
+
+{% block content %}
+    <nav>
+        {% include "extras/navigation_bar.html" %}
+    </nav>  
+    <h1>Read Later</h1>
+
+    <ul>
+        <p> {{saved_page}} </p>
+        {% for page in saved_page %}
+            <li>
+            <a href="/{{page}}">Saved post</a>
+            </li>
+        {% empty %}
+            <p>No pages saved for later.</p>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

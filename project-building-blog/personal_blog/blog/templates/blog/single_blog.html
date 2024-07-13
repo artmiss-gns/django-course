@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="{% static "blog/post.css" %}" />
     <link rel="stylesheet" href="{% static "blog/post_detail.css" %}" />
     <link rel="stylesheet" href="{% static "blog/comments.css" %}" />
+    <link rel="stylesheet" href="{% static "blog/read_later.css" %}" />
 
 {% endblock additional_css %}
 
@@ -18,11 +19,22 @@
     <nav>
         {% include "extras/navigation_bar.html" %}
     </nav>
+
+    
     <div>
     </div>
     <div class="post-page">
-        <div class="post-text">
-          <h1>{{ post.title }}</h1>
+      <div class="post-text">
+        <h1>{{ post.title }}</h1>
+
+        <!-- Read Later -->
+        <form action='{% url "save_for_later" post.slug %}' method='POST'>
+          {% csrf_token %}
+          <div class="read-later-box">
+            <button type="submit" name="post_id" value="{{ post.id }}" class="read-later-button">Read Later</button>
+          </div>
+        </form>
+
           <h3>
             <a href="mailto:{{ post.author.email_add }}" class='mail-link'> Mail: {{ post.author }}</a>
           </h3>
@@ -52,4 +64,4 @@
 
     
 
-{% endblock  %}
+{% endblock %}
