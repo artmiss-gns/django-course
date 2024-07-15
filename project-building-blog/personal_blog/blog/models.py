@@ -18,7 +18,7 @@ class Tag(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=32)
     excerpt = models.CharField(max_length=64)
-    image_name = models.CharField(max_length=16 ,null=True) # ! This can be implemented better later
+    image = models.ImageField(upload_to="posts", null=True) # /media/posts/image.png
     date = models.DateField(null=False)
     slug = models.SlugField(unique=True, db_index=True)
     content = models.TextField(null=True)
