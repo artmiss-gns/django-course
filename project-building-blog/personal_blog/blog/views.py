@@ -9,6 +9,7 @@ from .models import Post, Comment
 from .forms import AddCommentForm
 # Create your views here.
 
+# TODO : Convert the methods to ClassViews
 def main_page(request):
     # chosen_posts = sorted(data, key=lambda post: post['date'], reverse=True)[0:3]
     chosen_posts = Post.objects.order_by('-date')[:3]
